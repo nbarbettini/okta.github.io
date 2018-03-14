@@ -4051,8 +4051,6 @@ curl -v -X POST \
 }
 ~~~
 
-the user's password.
-
 #### Verify U2F Factor
 {:.api .api-operation}
 
@@ -4072,8 +4070,6 @@ signatureData  | base64 encoded signature data from the U2F token    | Body     
 rememberDevice | User's decision to remember device            | URL        | Boolean  | FALSE    |
 
 ##### Start Verification to Get Challenge Nonce
-
-the user's password.
 
 Verification of the U2F factor starts with getting the challenge nonce and U2F token details and then using the client-side
 JavaScript API to get the signed assertion from the U2F token.
@@ -4397,7 +4393,6 @@ curl -v -X POST \
 {:.api .api-operation}
 
 {% api_operation post /api/v1/authn/recovery/password %}
-
 Starts a new password recovery transaction for a given user and issues a [recovery token](#recovery-token) that can be used to reset the user's password.
 
 * [Forgot Password with Email Factor](#forgot-password-with-email-factor)
