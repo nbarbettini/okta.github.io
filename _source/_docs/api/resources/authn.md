@@ -4392,6 +4392,8 @@ curl -v -X POST \
 
 the user's password.
 
+the user's password.
+
 {:.api .api-operation}
 
 {% api_operation post /api/v1/authn/recovery/password %}
