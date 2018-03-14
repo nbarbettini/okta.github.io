@@ -4234,6 +4234,8 @@ curl -v -X POST \
 
 {% api_operation post /api/v1/authn/factors/${factorId}/verify %}
 
+Starts a new password recovery transaction for a given user and issues a [recovery token](#recovery-token) that can be used to reset the user's password.
+
 ##### Request Parameters for Verify Call Factor
 {:.api .api-request .api-request-params}
 
@@ -4266,6 +4268,8 @@ If the `passCode` is invalid you will receive a `403 Forbidden` status code with
   ]
 }
 ~~~
+
+Starts a new password recovery transaction for a given user and issues a [recovery token](#recovery-token) that can be used to reset the user's password.
 
 ##### Send Voice Call Challenge (OTP)
 
@@ -4343,6 +4347,8 @@ curl -v -X POST \
 }
 ~~~
 
+Starts a new password recovery transaction for a given user and issues a [recovery token](#recovery-token) that can be used to reset the user's password.
+
 ##### Verify Call Challenge (OTP)
 
 Specify `passCode` in the request to verify the factor.
@@ -4359,6 +4365,8 @@ curl -v -X POST \
   "passCode": "65786"
 }' "https://{yourOktaDomain}.com/api/v1/authn/factors/clf193zUBEROPBNZKPPE/verify"
 ~~~
+
+Starts a new password recovery transaction for a given user and issues a [recovery token](#recovery-token) that can be used to reset the user's password.
 
 ###### Response Example for Verify Call Challenge
 {:.api .api-response .api-response-example}
