@@ -3153,7 +3153,7 @@ Activation gets the registration information from the U2F token using the API an
 ##### Get registration information from U2F token by calling the U2F Javascript call
 {:.api .api-response .api-response-example}
 
-~~~html
+~~~
 <!-- Get the u2f-api.js from https://github.com/google/u2f-ref-code/tree/master/u2f-gae-demo/war/js -->
 <script src="/u2f-api.js"></script>
 <script>
@@ -3985,7 +3985,7 @@ curl -v -X POST \
 ##### Sample for Duo iFrame
 {:.api .api-response .api-response-example}
 
-~~~html
+~~~
 ...
 <!--
     The Duo SDK will automatically bind to this iFrame and populate it for us.
