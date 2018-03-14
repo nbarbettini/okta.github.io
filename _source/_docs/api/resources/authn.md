@@ -4163,14 +4163,13 @@ curl -v -X POST \
 }
 ~~~
 
-the user's password.
-
 ##### Get the Signed Assertion from the U2F Token
 {:.api .api-response .api-response-example}
 
-the user's password.
-
 ~~~
+<!-- Get the u2f-api.js from https://github.com/google/u2f-ref-code/tree/master/u2f-gae-demo/war/js -->
+<script src="/u2f-api.js"></script>
+<script>
 var challengeNonce = factor._embedded.challenge.nonce; //use the nonce from the challenge object
 var appId = factor.profile.appId; //use the appId from factor profile object
 
@@ -4189,9 +4188,8 @@ u2f.sign(appId, factorData.challenge.nonce, registeredKeys, function (data) {
 	  var signatureData = data.signatureData;
   }
 }
+</script>
 ~~~
-
-the user's password.
 
 #### Post the Signed Assertion to Okta to Complete Verification
 
@@ -4209,8 +4207,6 @@ curl -v -X POST \
   "signatureData":"AQAAAAEwRQIgRDEdmXr_jh1bEHtoUs1l7mMd-eUDO0eKqXKkrK5hUi0CIQDaVX030GgxVPr4RX3c4XgugildmHwDLwKRL0aMS3Sbpw==",
 }' "https://{yourOktaDomain}.com/api/v1/authn/factors/${factorId]/verify"
 ~~~
-
-the user's password.
 
 ##### Response of U2F Verification Example
 {:.api .api-response .api-response-example}
@@ -4236,15 +4232,11 @@ the user's password.
 }
 ~~~
 
-the user's password.
-
 
 #### Verify Call Factor
 {:.api .api-operation}
 
 {% api_operation post /api/v1/authn/factors/${factorId}/verify %}
-
-Starts a new password recovery transaction for a given user and issues a [recovery token](#recovery-token) that can be used to reset the user's password.
 
 ##### Request Parameters for Verify Call Factor
 {:.api .api-request .api-request-params}
@@ -4278,8 +4270,6 @@ If the `passCode` is invalid you will receive a `403 Forbidden` status code with
   ]
 }
 ~~~
-
-Starts a new password recovery transaction for a given user and issues a [recovery token](#recovery-token) that can be used to reset the user's password.
 
 ##### Send Voice Call Challenge (OTP)
 
@@ -4357,8 +4347,6 @@ curl -v -X POST \
 }
 ~~~
 
-Starts a new password recovery transaction for a given user and issues a [recovery token](#recovery-token) that can be used to reset the user's password.
-
 ##### Verify Call Challenge (OTP)
 
 Specify `passCode` in the request to verify the factor.
@@ -4375,8 +4363,6 @@ curl -v -X POST \
   "passCode": "65786"
 }' "https://{yourOktaDomain}.com/api/v1/authn/factors/clf193zUBEROPBNZKPPE/verify"
 ~~~
-
-Starts a new password recovery transaction for a given user and issues a [recovery token](#recovery-token) that can be used to reset the user's password.
 
 ###### Response Example for Verify Call Challenge
 {:.api .api-response .api-response-example}
@@ -4404,13 +4390,9 @@ Starts a new password recovery transaction for a given user and issues a [recove
 
 ~~~
 
-Starts a new password recovery transaction for a given user and issues a [recovery token](#recovery-token) that can be used to reset the user's password.
-
 ## Recovery Operations
 
 ### Forgot Password
-
-Starts a new password recovery transaction for a given user and issues a [recovery token](#recovery-token) that can be used to reset the user's password.
 
 {:.api .api-operation}
 
