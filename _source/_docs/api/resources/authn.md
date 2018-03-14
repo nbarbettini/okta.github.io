@@ -4168,7 +4168,9 @@ the user's password.
 ##### Get the Signed Assertion from the U2F Token
 {:.api .api-response .api-response-example}
 
-~~~javascript
+the user's password.
+
+~~~
 var challengeNonce = factor._embedded.challenge.nonce; //use the nonce from the challenge object
 var appId = factor.profile.appId; //use the appId from factor profile object
 
