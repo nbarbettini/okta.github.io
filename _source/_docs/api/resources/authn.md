@@ -4051,6 +4051,8 @@ curl -v -X POST \
 }
 ~~~
 
+the user's password.
+
 #### Verify U2F Factor
 {:.api .api-operation}
 
@@ -4070,6 +4072,8 @@ signatureData  | base64 encoded signature data from the U2F token    | Body     
 rememberDevice | User's decision to remember device            | URL        | Boolean  | FALSE    |
 
 ##### Start Verification to Get Challenge Nonce
+
+the user's password.
 
 Verification of the U2F factor starts with getting the challenge nonce and U2F token details and then using the client-side
 JavaScript API to get the signed assertion from the U2F token.
@@ -4159,6 +4163,8 @@ curl -v -X POST \
 }
 ~~~
 
+the user's password.
+
 ##### Get the Signed Assertion from the U2F Token
 {:.api .api-response .api-response-example}
 
@@ -4187,6 +4193,8 @@ u2f.sign(appId, factorData.challenge.nonce, registeredKeys, function (data) {
 </script>
 ~~~
 
+the user's password.
+
 #### Post the Signed Assertion to Okta to Complete Verification
 
 
@@ -4203,6 +4211,8 @@ curl -v -X POST \
   "signatureData":"AQAAAAEwRQIgRDEdmXr_jh1bEHtoUs1l7mMd-eUDO0eKqXKkrK5hUi0CIQDaVX030GgxVPr4RX3c4XgugildmHwDLwKRL0aMS3Sbpw==",
 }' "https://{yourOktaDomain}.com/api/v1/authn/factors/${factorId]/verify"
 ~~~
+
+the user's password.
 
 ##### Response of U2F Verification Example
 {:.api .api-response .api-response-example}
@@ -4227,6 +4237,8 @@ curl -v -X POST \
     }
 }
 ~~~
+
+the user's password.
 
 
 #### Verify Call Factor
