@@ -4168,10 +4168,7 @@ the user's password.
 ##### Get the Signed Assertion from the U2F Token
 {:.api .api-response .api-response-example}
 
-~~~html
-<!-- Get the u2f-api.js from https://github.com/google/u2f-ref-code/tree/master/u2f-gae-demo/war/js -->
-<script src="/u2f-api.js"></script>
-<script>
+~~~javascript
 var challengeNonce = factor._embedded.challenge.nonce; //use the nonce from the challenge object
 var appId = factor.profile.appId; //use the appId from factor profile object
 
@@ -4190,7 +4187,6 @@ u2f.sign(appId, factorData.challenge.nonce, registeredKeys, function (data) {
 	  var signatureData = data.signatureData;
   }
 }
-</script>
 ~~~
 
 the user's password.
