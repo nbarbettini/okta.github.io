@@ -24,7 +24,7 @@
 					<a href="/blog/"{{ if in (print .URL) "/blog/" }} class="active"{{ end }}>Blog</a>
 				</li>
 				<li class="leaf">
-					<a href="/documentation/" {{ if in .Site.Params.documentation_dirs (replaceRE "[/]" "" .URL) }} class="active"{{ end }}>Docs</a>
+					<a href="/documentation/" {{ if in .Site.Params.documentation_dirs (index (split .Dir "/") 0) }} class="active"{{ end }}>Docs</a>
 				</li>
 				<li class="last expanded">
 					<span class="nolink">Support</span>
