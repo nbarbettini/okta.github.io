@@ -193,7 +193,7 @@ This route redirects if the user is already logged in. If the user is coming fro
 
 Create a new component `src/Login.js`:
 
-{% raw %}
+
 ```typescript
 // src/Login.js
 
@@ -229,7 +229,7 @@ export default withAuth(class Login extends Component {
   }
 });
 ```
-{% endraw %}
+
 
 ### `/implicit/callback`
 The component for this route (ImplicitCallback) comes with `@okta/okta-react`. It handles token parsing, token storage, and redirecting to a protected page if one triggered the login.
