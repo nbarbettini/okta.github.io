@@ -351,7 +351,7 @@ module.exports = router
 I added `lodash`, so you'll need to install that as a dependency with `npm i lodash@4.17.5`. You'll also want to add a view to describe how to render the data in `views/dashboard.hbs`.
 
 ```hbs
-{% raw %}
+
 <h1>{{userinfo.given_name}}'s Dashboard</h1>
 
 <p>Here's where you would put something useful. How about your profile info?</p>
@@ -361,7 +361,7 @@ I added `lodash`, so you'll need to install that as a dependency with `npm i lod
     <dd>{{this.details}}</dd>
   {{/each}}
 </dl>
-{% endraw %}
+
 ```
 
 ## Clean Up the Styling
@@ -369,7 +369,7 @@ I added `lodash`, so you'll need to install that as a dependency with `npm i lod
 You can add a header in `views/layout.hbs` that will be visible on every page. As long as the routers pass in `userinfo` to the `render` function, you'll know if the user is signed in. You also want to pass in `title` to set the page's title and set the header.
 
 ```hbs
-{% raw %}
+
 <!DOCTYPE html>
 <html>
   <head>
@@ -395,7 +395,7 @@ You can add a header in `views/layout.hbs` that will be visible on every page. A
     </main>
   </body>
 </html>
-{% endraw %}
+
 ```
 
 The CSS lives in `public/stylesheets/style.css`. Here's how mine looks after making a few changes.
@@ -442,19 +442,19 @@ It turns out there's not really much to do here. Okta's middleware adds a `/logi
 In `routes/index.js` you want to know if the user's authenticated or not, so you can pass that info to the view with `req.userinfo`. While you're at it, go ahead and change the default title from `Express` to the name of your app.
 
 ```diff
-{% raw %}
+
 -  res.render('index', { title: 'Express' })
 +  res.render('index', {
 +    title: 'Simple Node Authentication',
 +    userinfo: req.userinfo,
 +  })
-{% endraw %}
+
 ```
 
 In `views/index.hbs`, let's add a link to the dashboard.
 
 ```hbs
-{% raw %}
+
 <p>Welcome to {{title}}</p>
 <p>
   To access your dashboard,
@@ -464,7 +464,7 @@ In `views/index.hbs`, let's add a link to the dashboard.
     <a href="/dashboard">sign in</a>.
   {{/if}}
 </p>
-{% endraw %}
+
 ```
 
 Now when you run the app, you get a page that looks like this:
@@ -550,7 +550,7 @@ When initially loading the page, the fields will be blank. If the `createUser` f
 
 **`views/register.hbs`**
 ```hbs
-{% raw %}
+
 <h4>After creating your account, you will be asked to sign in and provide a security question.</h4>
 <form method="post">
   <label for="firstname">
@@ -582,13 +582,13 @@ When initially loading the page, the fields will be blank. If the `createUser` f
 
   <button type="submit">Register</button>
 </form>
-{% endraw %}
+
 ```
 
 You can now add a link to the homepage in `views/index.hbs`.
 
 ```diff
-{% raw %}
+
      <a href="/dashboard">click here</a>.
    {{else}}
      <a href="/dashboard">sign in</a>.
@@ -598,7 +598,7 @@ You can now add a link to the homepage in `views/index.hbs`.
 +    <a href="/register">register for free</a>.
    {{/if}}
  </p>
-{% endraw %}
+
 ```
 
 Now if you navigate to http://localhost:3000/register, you'll find a registration page.
@@ -616,7 +616,7 @@ If a user forgets their password, they will need a way to reset it. Okta's API a
 
 **`views/reset-password.hbs`**
 ```javascript
-{% raw %}
+
 {{#if success}}
   <h4>Please check your inbox for a recovery email!</h4>
 {{else}}
@@ -631,7 +631,7 @@ If a user forgets their password, they will need a way to reset it. Okta's API a
 
   <button type="submit">Send Recovery Link</button>
 </form>
-{% endraw %}
+
 ```
 
 **`routes/reset-password.js`**
@@ -673,7 +673,7 @@ module.exports = router
 
 **`views/index.hbs`**
 ```diff
-{% raw %}
+
    <p>
      If you don't have an account, you can
      <a href="/register">register for free</a>.
@@ -684,7 +684,7 @@ module.exports = router
 +    send a recovery link to your email address.
    {{/if}}
  </p>
-{% endraw %}
+
 ```
 
 **`app.js`**

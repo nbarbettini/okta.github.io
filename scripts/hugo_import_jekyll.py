@@ -27,6 +27,8 @@ IMG_TAG = re.compile(r'{% img ([\w/\-.]+) (.*) %}(.*)')
 API_OPERATION_TAG = re.compile(r'{% api_operation (\w+) ([\w/*:.{}+$#?=]+) %}')
 API_LIFECYCLE_TAG = re.compile(r'{% api_lifecycle (\w+) %}')
 API_CORS = re.compile(r'{% api_cors %}')
+RAW_TAG = re.compile(r'{% raw %}')
+END_RAW_TAG = re.compile(r'{% endraw %}')
 
 def main():
     parser = argparse.ArgumentParser()
@@ -61,6 +63,8 @@ def main():
                     data = re.sub(API_OPERATION_TAG, r'{{< api_operation \1 "\2" >}}', data)
                     data = re.sub(API_LIFECYCLE_TAG, r'{{< api_lifecycle \1 >}}', data)
                     data = re.sub(API_CORS, r'{{< api_cors >}}', data)
+                    data = re.sub(RAW_TAG, r'', data)
+                    data = re.sub(END_RAW_TAG, r'', data)
                     new_lines = []
                     for line in data.splitlines():
                         if line.startswith('{% img'):

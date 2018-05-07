@@ -90,7 +90,7 @@ ionic g page Login
 
 In the generated `src/pages/login/login.html`, add a form with username and password fields.
 
-{% raw %}
+
 ```html
 <ion-header>
   <ion-navbar>
@@ -126,7 +126,7 @@ In the generated `src/pages/login/login.html`, add a form with username and pass
   </form>
 </ion-content>
 ```
-{% endraw %}
+
 
 You can leverage a couple of open source libraries to perform the actual authentication. The first one is [Manfred Steyer's](https://github.com/manfredsteyer) [angular-oauth2-oidc](https://github.com/manfredsteyer/angular-oauth2-oidc). This library allows you to interact with identity and access tokens easily. The second is the [Okta Auth SDK](/code/javascript/okta_auth_sdk). [OAuth is not an authentication protocol](/blog/2017/06/21/what-the-heck-is-oauth), but OIDC is. Why is it necessary to add Okta's authentication library then? Because OIDC authentication works via redirect (when using in a SPA) and I'd rather perform authentication without redirecting to Okta.
 
@@ -389,7 +389,7 @@ export class HomePage {
 
 To display this information on the home tab, add the following HTML just after the second paragraph in `src/app/home/home.html`.
 
-{% raw %}
+
 ```html
 <div *ngIf="givenName">
   <hr>
@@ -400,7 +400,7 @@ To display this information on the home tab, add the following HTML just after t
   </div>
 </div>
 ```
-{% endraw %}
+
 
 Update `src/app/home/home.scss` to add some CSS to make the raw JSON look a bit better.
 

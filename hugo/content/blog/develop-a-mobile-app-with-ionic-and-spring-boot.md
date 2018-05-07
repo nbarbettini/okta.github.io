@@ -171,7 +171,7 @@ export class BeerService {
 
 Replace the HTML in `src/pages/beer/beer.html` to show the list of beers.
 
-{% raw %}
+
 ```html
 <ion-header>
   <ion-navbar>
@@ -187,7 +187,7 @@ Replace the HTML in `src/pages/beer/beer.html` to show the list of beers.
   </ion-list>
 </ion-content>
 ```
-{% endraw %}
+
 
 Modify `src/pages/beer/beer.module.ts` to import `BeerService` and add it as a provider. You could add it as a provider in each component, but adding it in the module allows all components to use it.
 
@@ -343,7 +343,7 @@ export class BeerPage {
 
 Update `beer.html` to display the image retrieved:
 
-{% raw %}
+
 ```html
 <ion-item *ngFor="let beer of beers">
   <ion-avatar item-left>
@@ -352,7 +352,7 @@ Update `beer.html` to display the image retrieved:
   <h2>{{beer.name}}</h2>
 </ion-item>
 ```
-{% endraw %}
+
 
 Start the Spring Boot app in one terminal window and run `ionic serve` in another. Open `http://localhost:8100` in your browser. Click on the Beer icon, and you'll likely see an error in your browser.
 
@@ -504,7 +504,7 @@ export class BeerModalPage {
 
 Add the import for `BeerModalPage` to `beer.ts`, then create `src/pages/beer/beer-modal.html` as a template for this page.
 
-{% raw %}
+
 ```html
 <ion-header>
   <ion-toolbar>
@@ -547,7 +547,7 @@ Add the import for `BeerModalPage` to `beer.ts`, then create `src/pages/beer/bee
   </form>
 </ion-content>
 ```
-{% endraw %}
+
 
 You'll also need to modify `beer-service.ts` to have `get()` and `save()` methods.
 
@@ -606,7 +606,7 @@ Re-compile and now everything should work as expected. For example, below is a s
 
 To add swipe-to-delete functionality on the list of beers, open `beer.html` and make it so `<ion-item-sliding>` wraps `<ion-item>` and contains the `*ngFor`. Add a delete button using `<ion-item-options>`.
 
-{% raw %}
+
 ```html
 <ion-content padding>
   <ion-list>
@@ -626,7 +626,7 @@ To add swipe-to-delete functionality on the list of beers, open `beer.html` and 
   </ion-list>
 </ion-content>
 ```
-{% endraw %}
+
 
 Add a `remove()` method to `beer.ts`.
 

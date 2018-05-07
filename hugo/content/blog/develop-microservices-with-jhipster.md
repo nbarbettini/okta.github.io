@@ -381,11 +381,11 @@ If you enter HTML in the `content` field of a blog entry, you'll notice it's esc
 
 To change this behavior, open `entry.component.html` and change the following line:
 
-{% raw %}
+
 ```html
 <td>{{entry.content}}</td>
 ```
-{% endraw %}
+
 
 To:
 
@@ -401,7 +401,7 @@ After making this change, you'll see that the HTML is no longer escaped.
 
 To make the list of entries look like a blog, replace `<div class="table-responsive">` with HTML, so it uses a stacked layout in a single column.
 
-{% raw %}
+
 ```html
 <div class="table-responsive" *ngIf="entries">
     <div infinite-scroll (scrolled)="loadPage(page + 1)" [infiniteScrollDisabled]="page >= links['last']"
@@ -430,7 +430,7 @@ To make the list of entries look like a blog, replace `<div class="table-respons
     </div>
 </div>
 ```
-{% endraw %}
+
 
 Now it looks more like a regular blog!
 

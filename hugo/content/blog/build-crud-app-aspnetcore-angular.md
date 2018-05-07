@@ -505,7 +505,7 @@ export class AppModule { }
 
 Next, build the HTML that will display the actual data on screen. You can add a column that will display average speed. Edit the template of the GridJogging component (```grid-jogging-component.html```):
 
-{% raw %}
+
 ```html
 <a href="#" id="new-button">New</a>
 <table>
@@ -532,9 +532,9 @@ Next, build the HTML that will display the actual data on screen. You can add a 
 </tbody>
 </table>
 ```
-{% endraw %}
 
-The {% raw %}`{{handlebars}}`{% endraw %} are just a placeholder for data populated by Angular. You can also do some basic calculations in there. 
+
+The `{{handlebars}}` are just a placeholder for data populated by Angular. You can also do some basic calculations in there. 
 
 `*ngFor` is an Angular directive that makes this particular block repeat itself for every array member of `joggingData`. In each iteration, the current object will be referenced as `joggingInfo`. So, we are just printing a row of a table with data for each array member. 
 

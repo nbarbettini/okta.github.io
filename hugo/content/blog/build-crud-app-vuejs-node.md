@@ -217,7 +217,7 @@ You can toggle the visibility of these menu items using the `v-if` directive in 
 
 Open `./src/App.vue` and copy/paste the following code.
 
-{% raw %}
+
 ```html
 <template>
   <div id="app">
@@ -270,7 +270,7 @@ export default {
 }
 </script>
 ```
-{% endraw %}
+
 
 Every login must have a logout. The following snippet will logout your user, refresh the active user (which is now null), and then redirect the user to the homepage. This method is called when a user clicks on the logout link in the nav.
 
@@ -286,7 +286,7 @@ async logout () {
 
 Now that you've added vue-bootstrap, modify `./src/components/Hello.vue` to remove the boilerplate links vue-cli generates.
 
-{% raw %}
+
 ```html
 <template>
   <div class="hero">
@@ -311,13 +311,13 @@ Now that you've added vue-bootstrap, modify `./src/components/Hello.vue` to remo
   }
 </style>
 ```
-{% endraw %}
+
 
 At this point you can stub out the Post Manager page to test your authentication flow. Once you confirm authentication works, you'll start to build out the API calls and components required to perform CRUD operations on your Posts model. 
 
 Create a new file `./src/components/PostsManager.vue` and paste the following code:
 
-{% raw %}
+
 ```html
 <template>
   <div class="container-fluid mt-4">
@@ -326,7 +326,7 @@ Create a new file `./src/components/PostsManager.vue` and paste the following co
   </div>
 </template>
 ```
-{% endraw %}
+
 
 ## Take Your Vue.js Frontend and Auth Flows for a Test Drive
 
@@ -585,7 +585,7 @@ deletePost (id) {
 
 You now have all the components required to wire up your posts manager component to make CRUD operations via the REST API. Open `./src/components/PostsManager.vue` and copy/paste the following code.
 
-{% raw %}
+
 ```html
 <template>
   <div class="container-fluid mt-4">
@@ -679,7 +679,7 @@ export default {
 }
 </script>
 ```
-{% endraw %}
+
 
 ### Listing Posts
 

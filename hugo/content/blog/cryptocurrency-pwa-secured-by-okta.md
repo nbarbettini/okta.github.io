@@ -190,7 +190,7 @@ Populate `src/pages/login/login.html` with the following HTML that welcomes the 
 
 In `src/pages/home/home.html`, add padding to the `ion-content` tag, change the `<div class="message">` to welcome the user by name, and modify the welcome message. This change is necessary because the original message says no account is required.
 
-{% raw %}
+
 ```html
 <ion-content padding>
   <h1>Welcome, {{ name }}</h1>
@@ -205,7 +205,7 @@ In `src/pages/home/home.html`, add padding to the `ion-content` tag, change the 
 ...
 </ion-content>
 ```
-{% endraw %}
+
 
 Change `src/pages/home/home.ts` to check for a valid access token, and to have a getter for the ``name`` referenced in the template above.
 

@@ -228,7 +228,7 @@ Modify `client/src/app/app/app.component.html` to use `<router-outlet>` instead 
 
 Create `client/src/app/home/home.component.ts` and configure it to display **Login** and **Logout** buttons.
 
-{% raw %}
+
 ```typescript
 import { Component } from '@angular/core';
 import { OAuthService } from 'angular-oauth2-oidc';
@@ -266,7 +266,7 @@ export class HomeComponent {
   }
 }
 ```
-{% endraw %}
+
 
 Modify `client/src/app/shared/beer/beer.service.ts` to read the access token from `oauthService` and add an `Authorization` header.
 
@@ -365,7 +365,7 @@ Click on **Beer List** to see data from your Spring Boot app.
 
 To add the "Home" link at the top (as shown in the screenshot above), modify `client/src/app/beer-list/beer-list.component.html` to include the following HTML.
 
-{% raw %}
+
 ```html
 <a mat-button routerLink="/home">Home</a>
 
@@ -383,7 +383,7 @@ To add the "Home" link at the top (as shown in the screenshot above), modify `cl
   </mat-card-content>
 </mat-card>
 ```
-{% endraw %}
+
 
 If it works - great, now we can add auth with Okta!
 
@@ -399,7 +399,7 @@ npm install @okta/okta-auth-js --save
 
 Change `HomeComponent` to import `OktaAuth` and modify its `template`, so it has a sign-in form.
 
-{% raw %}
+
 ```typescript
 import * as OktaAuth from '@okta/okta-auth-js';
 
@@ -443,7 +443,7 @@ import * as OktaAuth from '@okta/okta-auth-js';
     </mat-card>`
 })
 ```
-{% endraw %}
+
 
 Update `client/src/app/app.module.ts` to import the dependencies required by Angular Material when working with forms.
 

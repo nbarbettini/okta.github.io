@@ -126,7 +126,7 @@ Components are how Vue.js organizes pieces of your application. A component wrap
 
 In the ClientApp folder, create a new folder called `components`. Inside the new folder, create a file called `Dashboard.vue`:
 
-{% raw %}
+
 ```html
 <template>
   <div class="dashboard">
@@ -203,13 +203,13 @@ export default {
 }
 </style>
 ```
-{% endraw %}
+
 
 The Dashboard component is responsible for displaying all the user's to-do items, and rendering an input field that lets the user add a new item. In `router.js`, you told the Vue router to render this component on the `/` path, or the root route of the application.
 
 This component has HTML in the `<template>` section, JavaScript in the `<script>` section, and CSS in the `<style>` section, all stored in one `.vue` file. If your Vue components become too large or unwieldy, you can choose to split them into separate HTML, JS, and CSS files as needed.
 
-When you use {% raw %}`{{moustaches}}`{% endraw %} or attributes like `v-for` in the component's HTML, Vue.js automatically inserts (or **binds**) data that's available to the component. In this case, you've defined a handful of JavaScript methods in the `computed` section that retrieve things like the user's name and the user's to-do list from the data store. That data is then automatically rendered by Vue. Don't worry about `$store` and `$auth` yet. You'll add these pieces in a few minutes.
+When you use `{{moustaches}}` or attributes like `v-for` in the component's HTML, Vue.js automatically inserts (or **binds**) data that's available to the component. In this case, you've defined a handful of JavaScript methods in the `computed` section that retrieve things like the user's name and the user's to-do list from the data store. That data is then automatically rendered by Vue. Don't worry about `$store` and `$auth` yet. You'll add these pieces in a few minutes.
 
 Notice the `components: { TodoItem }` line? The Dashboard component relies on another component called TodoItem. Create a file called `TodoItem.vue`:
 
@@ -800,7 +800,7 @@ The data may be fake, but you've successfully connected the backend and frontend
 
 When the Okta Vue SDK handles a login via Okta, it saves a token called an **access token** in your frontend app. You can attach this access token to calls to your backend API to make them secure. Before you do that, you have to tell your ASP.NET Core project to use token authentication. Open up the `Startup.cs` file and add this code to the `ConfigureServices` method:
 
-{% raw %}
+
 ```csharp
 services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
 .AddJwtBearer(options =>
@@ -809,7 +809,7 @@ services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
     options.Audience = "api://default";
 });
 ```
-{% endraw %}
+
 
 Make sure you replace `yourOktaDomain` with your Okta Org URL (find it in the top-right of your Okta developer console's Dashboard).
 
@@ -937,11 +937,11 @@ Generate a [random GUID](https://www.guidgenerator.com/) as the ID value, and sa
 
 Grab the Okta API token value and store it using the Secret Manager:
 
-{% raw %}
+
 ```bash
 dotnet user-secrets set okta:token {{oktaApiToken}}
 ```
-{% endraw %}
+
 
 To make the values stored in the Secret Manager available to your application, you need to add it as a configuration source in `Startup.cs`. At the top of the file, in the `Startup` (constructor) method, add this code:
 

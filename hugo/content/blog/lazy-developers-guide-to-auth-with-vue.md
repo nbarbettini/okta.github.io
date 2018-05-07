@@ -162,7 +162,7 @@ function pretendRequest (email, pass, cb) {
 
 Copy [`App.vue`](https://github.com/vuejs/vue-router/blob/dev/examples/auth-flow/components/App.vue) (or the code below) from `auth-flow` to `src/App.vue`:
 
-{% raw %}
+
 ```html
 <template>
   <div id="app">
@@ -205,7 +205,7 @@ export default {
 }
 </script>
 ```
-{% endraw %}
+
 
 Add the following HTML/CSS to the bottom of `src/App.vue` to give it the same styling that the `auth-flow` project has.
 
@@ -479,7 +479,7 @@ parseJwt (token) {
 
 Now the ID token will provide you with the user’s name, and you can show it on the dashboard! Modify `src/components/Dashboard.vue` to have the following code.
 
-{% raw %}
+
 ```html
 <template>
   <div>
@@ -498,7 +498,7 @@ Now the ID token will provide you with the user’s name, and you can show it on
   }
 </script>
 ```
-{% endraw %}
+
 
 If your project is not running, start it with `npm start` and navigate to `http://localhost:8080`. Rejoice if it works!
 

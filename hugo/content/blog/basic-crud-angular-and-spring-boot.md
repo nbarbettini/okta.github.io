@@ -296,7 +296,7 @@ export class CarListComponent implements OnInit {
 
 Update `client/src/app/car-list/car-list.component.html` to show the list of cars.
 
-{% raw %}
+
 ```html
 <h2>Car List</h2>
 
@@ -304,11 +304,11 @@ Update `client/src/app/car-list/car-list.component.html` to show the list of car
   {{car.name}}
 </div>
 ```
-{% endraw %}
+
 
 Update `client/src/app/app.component.html` to have the `app-car-list` element.
 
-{% raw %}
+
 ```html
 <div style="text-align:center">
   <h1>Welcome to {{title}}!</h1>
@@ -316,7 +316,7 @@ Update `client/src/app/app.component.html` to have the `app-car-list` element.
 
 <app-car-list></app-car-list>
 ```
-{% endraw %}
+
 
 Start the client application using `ng serve`. Open your favorite browser to http://localhost:4200. You won't see the
 car list just yet, and if you open your developer console, you'll see why.
@@ -378,7 +378,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 Update `client/src/app/app.component.html` to use the toolbar component.
 
-{% raw %}
+
 ```html
 <mat-toolbar color="primary">
   <span>Welcome to {{title}}!</span>
@@ -386,11 +386,11 @@ Update `client/src/app/app.component.html` to use the toolbar component.
 
 <app-car-list></app-car-list>
 ```
-{% endraw %}
+
 
 Update `client/src/app/car-list/car-list.component.html` to use the card layout and list component.
 
-{% raw %}
+
 ```html
 <mat-card>
   <mat-card-header>Car List</mat-card-header>
@@ -404,7 +404,7 @@ Update `client/src/app/car-list/car-list.component.html` to use the card layout 
   </mat-card-content>
 </mat-card>
 ```
-{% endraw %}
+
 
 Modify `client/src/styles.css` to specify the theme and icons.
 
@@ -541,7 +541,7 @@ export class CarService {
 In `client/src/app/car-list/car-list.component.html`, add a link to the edit component. Also, add a button at the bottom
 to add a new car.
 
-{% raw %}
+
 ```html
 <mat-card>
   <mat-card-header>Car List</mat-card-header>
@@ -559,7 +559,7 @@ to add a new car.
   <button mat-fab color="primary" [routerLink]="['/car-add']">Add</button>
 </mat-card>
 ```
-{% endraw %}
+
 
 In `client/src/app/app.module.ts`, add routes and import the `FormsModule`.
 
@@ -663,7 +663,7 @@ export class CarEditComponent implements OnInit, OnDestroy {
 
 Update the HTML in `client/src/app/car-edit/car-edit.component.html` to have a form with the car's name, as well as to display the image from Giphy.
 
-{% raw %}
+
 ```html
 <mat-card>
   <form #carForm="ngForm" (ngSubmit)="save(carForm.value)">
@@ -692,7 +692,7 @@ Update the HTML in `client/src/app/car-edit/car-edit.component.html` to have a f
   </form>
 </mat-card>
 ```
-{% endraw %}
+
 
 Put a little padding around the image by adding the following CSS to `client/src/app/car-edit/car-edit.component.css`.
 
@@ -704,7 +704,7 @@ Put a little padding around the image by adding the following CSS to `client/src
 
 Modify `client/src/app/app.component.html` and replace `<app-car-list></app-car-list>` with `<router-outlet></router-outlet>`. This change is necessary or routing between components won’t work.
 
-{% raw %}
+
 ```html
 <mat-toolbar color="primary">
   <span>Welcome to {{title}}!</span>
@@ -712,7 +712,7 @@ Modify `client/src/app/app.component.html` and replace `<app-car-list></app-car-
 
 <router-outlet></router-outlet>
 ```
-{% endraw %}
+
 
 After you make all these changes, you should be able to add, edit, or delete any cars. Below is a screenshot that shows the list with the add button.
 
@@ -882,7 +882,7 @@ import { AuthInterceptor } from './shared/okta/auth.interceptor';
 
 Modify `client/src/app/app.component.html` to have login and logout buttons.
 
-{% raw %}
+
 ```html
 <mat-toolbar color="primary">
   <span>Welcome to {{title}}!</span>
@@ -902,7 +902,7 @@ Modify `client/src/app/app.component.html` to have login and logout buttons.
 
 <router-outlet></router-outlet>
 ```
-{% endraw %}
+
 
 You might notice there's a span with a `toolbar-spacer` class. To make that work as expected, update `client/src/app/app.component.css` to have the following class.
 
@@ -965,7 +965,7 @@ const appRoutes: Routes = [
 
 Move the HTML for the Login button from `app.component.html` to `client/src/app/home/home.component.html`.
 
-{% raw %}
+
 ```html
 <mat-card>
   <mat-card-content>
@@ -978,7 +978,7 @@ Move the HTML for the Login button from `app.component.html` to `client/src/app/
   </mat-card-content>
 </mat-card>
 ```
-{% endraw %}
+
 
 Add `oktaAuth` as a dependency in `client/src/app/home/home.component.ts` and set it up to initialize/change the `isAuthenticated` variable.
 
@@ -1003,7 +1003,7 @@ export class HomeComponent implements OnInit {
 
 Update `client/src/app/app.component.html`, so the Logout button redirects back to home when it's clicked.
 
-{% raw %}
+
 ```html
 <mat-toolbar color="primary">
   <span>Welcome to {{title}}!</span>
@@ -1015,7 +1015,7 @@ Update `client/src/app/app.component.html`, so the Logout button redirects back 
 
 <router-outlet></router-outlet>
 ```
-{% endraw %}
+
 
 Now you should be able to open your browser to http://localhost:4200 and click on the Login button. If you've configured everything correctly, you'll be redirected to Okta to log in.
 

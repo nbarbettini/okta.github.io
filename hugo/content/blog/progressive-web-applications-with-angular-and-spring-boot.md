@@ -122,7 +122,7 @@ body {
 
 Change the HTML templates to use Material components. For `app.component.html`, you can change the `<h1>` to be an `<mat-toolbar>`.
 
-{% raw %}
+
 ```html
 <mat-toolbar color="primary">
   <span>Welcome to {{title}}!</span>
@@ -130,11 +130,11 @@ Change the HTML templates to use Material components. For `app.component.html`, 
 
 <app-beer-list></app-beer-list>
 ```
-{% endraw %}
+
 
 In `beer-list.component.html`, change it to use `<mat-list>` and its related components.
 
-{% raw %}
+
 ```html
 <h2>Beer List</h2>
 
@@ -147,7 +147,7 @@ In `beer-list.component.html`, change it to use `<mat-list>` and its related com
   </mat-list-item>
 </mat-list>
 ```
-{% endraw %}
+
 
 After making these changes, the app should look a little better. Run `ng serve` and you should see how your UI has changed. Below is a screenshot using Chrome's device toolbar.
 

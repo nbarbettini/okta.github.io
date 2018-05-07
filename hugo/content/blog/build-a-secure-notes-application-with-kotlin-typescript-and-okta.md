@@ -444,14 +444,14 @@ export class NoteListComponent implements OnInit {
 
 Replace the HTML in `client/src/app/note-list/note-list.component.html` with a few lines to render the notes list.
 
-{% raw %}
+
 ```html
 <h2>Notes List</h2>
 <div *ngFor="let note of notes">
   {{note.text}}
 </div>
 ```
-{% endraw %}
+
 
 If you try to make things work at this point, you won’t be able to access your API because it expects you to send an access token in an `Authorization` header.
 
@@ -691,7 +691,7 @@ In the same directory, update `login.component.html` to have a div for the sign-
 
 Modify `client/src/app/app.component.html` to show the user’s name and add a `<router-outlet>` for rendering all the routes.
 
-{% raw %}
+
 ```html
 <h1>{{title}}</h1>
 
@@ -702,7 +702,7 @@ Modify `client/src/app/app.component.html` to show the user’s name and add a `
 
 <router-outlet [hidden]="!user"></router-outlet>
 ```
-{% endraw %}
+
 
 Then update `client/src/app/app.component.ts` so it has a reference to `user` and `oktaService`. Notice that this class populates the user variable if the user is already authenticated (for example, they refreshed their browser) or if they sign in with the widget. The `this.oktaService.user$` is an `Observable` that can be subscribed to for changes in the user.
 

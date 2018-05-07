@@ -498,7 +498,7 @@ export class BeerService {
 
 Modify `app.component.html` to add a placeholder for the widget and a section to show the user's name and a logout button.
 
-{% raw %}
+
 ```html
 <mat-toolbar color="primary">
   <span>Welcome to {{title}}!</span>
@@ -517,7 +517,7 @@ Modify `app.component.html` to add a placeholder for the widget and a section to
   <app-beer-list></app-beer-list>
 </div>
 ```
-{% endraw %}
+
 
 You’ll notice the `user` variable in the HTML. To resolve this, you need to change your `client/src/app/app.component.ts` so it renders the Sign-In Widget. Angular's `ChangeDetectorRef` is used to notify Angular when things have changed and rendering needs to process updated variables.
 
