@@ -30,15 +30,15 @@ So, create a folder called Models, and in there build a Workout class in a file 
 
 ```csharp
 public class Workout
- {
-     public int Id { get; set; }
+{
+    public int Id { get; set; }
 
-     public DateTimeOffset Date { get; set; }
+    public DateTimeOffset Date { get; set; }
 
-     public int DistanceInMeters { get; set; }
+    public int DistanceInMeters { get; set; }
 
-     public long TimeInSeconds { get; set; }
- }
+    public long TimeInSeconds { get; set; }
+}
 ```
 
 ### Add a New Controller
@@ -49,14 +49,14 @@ A Data folder has been created, and in it a file called `WorkoutContext.cs`. It'
 
 ```csharp
 public class WorkoutContext : DbContext
+{
+    public WorkoutContext (DbContextOptions<WorkoutContext> options)
+        : base(options)
     {
-        public WorkoutContext (DbContextOptions<WorkoutContext> options)
-            : base(options)
-        {
-        }
-
-        public DbSet<Backend.Models.Workout> Workout { get; set; }
     }
+
+    public DbSet<Backend.Models.Workout> Workout { get; set; }
+}
 ```
 It has created a database context, and added a database set of type Workout to the context. This database context provides a way for your C# code to access your database.
 
@@ -191,6 +191,7 @@ Most methods are annotated with the HTTP action verb (e.g. `HttpPost` or `HttpPu
 The controller receives a `WorkoutContext` in the constructor and it saves and gets all data through it. The specific instance of the context will be dependency injected.
 
 For a large application, you'll want to avoid using the database context directly in the controller. You can split the logic of the application into the following layers:
+
 * A data layer which has repositories that are in charge only of communicating with the database
 * A service layer which has services that can process logic and communicate with the data layer to save and load data
 * A presentation layer which includes the API controllers and does not have a lot of logic, it just takes in information from the API, uses the services it needs for data processing and returns the results through the API
@@ -203,7 +204,7 @@ Another thing the controller scaffold did was alter the ```appsettings.json``` f
 ```javascript 
 "ConnectionStrings": {
     "WorkoutContext": "Server=(localdb)\\mssqllocaldb;Database=WorkoutContext-96b0f43c-71bb-4887-b9e3-cf768e432412;Trusted_Connection=True;MultipleActiveResultSets=true"
-  }
+}
 ```
 
 This says that the `WorkoutContext` will connect to a database server and a specific database that is provided here. By default, it uses a local database on your machine called [SQL Server LocalDB](https://docs.microsoft.com/en-us/aspnet/core/tutorials/first-mvc-app/working-with-sql?tabs=aspnetcore2x). You can change this to any database you like. If you need help building connection strings, you can use a [connection string generator tool](https://www.developerfusion.com/tools/sql-connection-string/). 
@@ -222,11 +223,15 @@ In the `WorkoutContext` you have defined what the tables should look like. You n
 
 Use the command:
 
-```Add-Migration Initial```
+```
+Add-Migration Initial
+```
 
 This will create a `Migrations` folder in your solution and add a file called something like `2180401145609_Initial.cs`. If you open it, you will notice it has the `Up` and `Down` methods. The `Up` method contains the code used to upgrade the database to the next version, while the `Down` method contains the code to downgrade to the previous version. At this point you have no database, so the goal is to upgrade from nothing to the current version. In the Package Manager Console use the command:
 
-```Update-Database```
+```
+Update-Database
+```
 
 This has now created the database with the Workout table in it. You will need to add a new migration and run a database update in this way each time you change something that changes the database structure. 
 
@@ -400,7 +405,7 @@ const appRoutes: Routes = [
   // ...
 ```
 
-For more details on Angular routing you can check their official documentation. For our purposes, just know that whenever a user comes to the base URL(`path == ''`), the router will load the `HomeComponent`.
+For more details on Angular routing you can check their official documentation. For our purposes, just know that whenever a user comes to the base URL (`path == ''`), the router will load the `HomeComponent`.
 
 The root component is always loaded. However, the components defined in the router are loaded into a special placeholder that is in the root component HTML, defined by the ```<router-outlet>```. Change the ```app.component.html``` file to:
 
@@ -562,6 +567,7 @@ export class HomeComponent implements OnInit {
   }
 
   // ...
+}
 ```
 
 HttpClient methods return observables. Here it says that you want your Home component to subscribe to any changes made by the `workoutService.get()` method, and when new changed data is received, to store it to `this.joggingData`.
@@ -616,9 +622,8 @@ Now we need to create the component to add new data. In our `add-or-update-joggi
             <input type="number" id="time-input" [(ngModel)]="joggingInfo.timeInSeconds" (input)="joggingInfo.timeInSeconds = $event.target.value" class="form-control" />
         </div>
         <button type="button" class="btn btn-primary" (click)="addOrUpdateJoggingRecord($event);">Save</button>
-
     </form>
-   </div>
+</div>
 ```
 
 You will notice the `[(ngModel)]` tag. This indicates a two-way binding between the value of the HTML element and the object provided. In other words: as you type, the value of the object changes instantly and if you change the object's value from another place, the input box value will be updated immediately.
@@ -813,6 +818,7 @@ To integrate Okta for user authentication, you'll first need to [sign up for a f
 Log in to your Okta account, or create one if you don't have one. Navigate to Applications and click on Add Application. Set your application up like this:
 
 **App type:** Single-page Application
+
 **Login redirect URI:** `http://localhost:4200/implicit/callback`
 
 <img src="/img/blog/build-crud-app-aspnetcore-angular/okta-app-settings.jpg" alt="Okta Application settings" width="600" class="center-image">
@@ -1194,6 +1200,7 @@ Now you just need some people, and to get jogging!
 ## Build More with ASP.NET Core and Angular
 
 Interested in digging in deeper with ASP.NET Core, Angular, or Okta? We've got you covered. Check out the following resources for more cool projects:
+
 * [Add Authentication to Your Angular PWA](https://developer.okta.com/blog/2017/06/13/add-authentication-angular-pwa)
 * [Token Authentication in ASP.NET Core - A Complete Guide](https://developer.okta.com/blog/2018/03/23/token-authentication-aspnetcore-complete-guide)
 * [Build Your First Progressive Web App with Angular and Spring Boot](https://developer.okta.com/blog/2017/05/09/progressive-web-applications-with-angular-and-spring-boot)

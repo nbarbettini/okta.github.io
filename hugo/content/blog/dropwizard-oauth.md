@@ -13,7 +13,7 @@ tweets:
 
 Dropwizard is recognized as the pioneer in turn-key Java API frameworks, and rivals Spring Boot for ease of adoption. Whether you're interested in trying it out for the first time, or already have a mature platform built on top of Dropwizard, you can add secure authentication to your site in a matter of minutes. By combining Dropwizard's production-ready essential libraries and Okta's identity platform, you can construct a fully secured internet-facing web service with little effort. Read on to see how!
 
-This tutorial assumes familiarity with Java, Maven, and basic web service and web security concepts. The first section sets up a new Dropwizard server from scratch, so if you already have one up and running, feel free to skip ahead and integrate With Okta]. You can also find the completed code example on [GitHub](https://github.com/oktadeveloper/okta-dropwizard-oauth-example).
+This tutorial assumes familiarity with Java, Maven, and basic web service and web security concepts. The first section sets up a new Dropwizard server from scratch, so if you already have one up and running, feel free to skip ahead and integrate with Okta. You can also find the completed code example on [GitHub](https://github.com/oktadeveloper/okta-dropwizard-oauth-example).
 
 ## Dropwizard vs. Spring Boot
 

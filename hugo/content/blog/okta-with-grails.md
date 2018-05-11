@@ -21,6 +21,7 @@ What is Grails, what is Groovy, and why would we choose them over Spring Boot? I
 If Grails is built on Spring Boot, why not just use that? Good question! The answer depends on your goals and your background (ie, do you already know and love Spring?).
 
 Let's look at Grails + Groovy:
+
 * Grails and Groovy may be easier to dive into if you're not already familiar with Spring
 * Grails has a great templating system and full-featured ORM
 * Grails is built on Spring Boot, so (theoretically, at least) you can get the best of both worlds. In practice this might be easier said than done.
@@ -29,6 +30,7 @@ Let's look at Grails + Groovy:
 * Grails may be waning in popularity. The upgrade from 2.x to 3.x was bumpy and caused a lot of grumbling in the community.
 
 Let’s look at Spring:
+
 * Spring Boot is great for simple REST API services
 * Spring Data is super powerful but correspondingly complicated
 * Templating in Spring is pretty old-fashioned these days
@@ -37,6 +39,7 @@ Let’s look at Spring:
 * The larger Spring architecture is incredibly powerful once you wrap your head around it
 
 So what's the verdict? My suggestions are: 
+
 * If you're not already into Spring, and you want to develop a web application quickly, go with Grails. It's easy and developer friendly by design.
 * For simple REST services, Spring Boot or Apache Jersey + Shiro might be good alternatives. There's really no point in using Grails if you're not going to use the ORM and/or templating capabilities.
 * If you're building a large enterprise app or API system and require a guarantee of long term support (many years), or are already deep into Spring, then Spring Boot may be your best bet.
@@ -179,6 +182,7 @@ That's it for Okta setup for our purposes. You can certainly dig MUCH deeper int
 ## Dive Back Into Grails!
 
 We need to install three dependencies:
+
 * [Grails Spring Security Core Plugin](https://grails-plugins.github.io/grails-spring-security-core/3.2.x/index.html#installation) (adds core Spring Security features)
 *  [Grails Spring Security OAuth2 plugin](https://github.com/MatrixCrawler/grails-spring-security-oauth2) (adds OAuth 2.0 features)
 * [Okta OAuth 2.0 Provider Plugin](https://github.com/moksamedia/okta-oauth2-service) (tells the OAuth plugin how to talk to Okta)
