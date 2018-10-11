@@ -1,0 +1,23 @@
+
+# html lang
+language: en
+
+# main menu navigation
+menu:
+  Home: /
+  About: /about
+  Contact: /contact
+  Archives: /archives
+
+# Miscelaneous
+favicon: /favicon.ico
+
+# stylesheets loaded in the <head>
+stylesheets:
+- https://developer.okta.com/assets/okta-40012fd4136a65a9732e2243ee2eb1a543b3accabf74fb636b547b01bf83cf90.css
+- https://developer.okta.com/sites/all/themes/developer/css/master.css
+- https://developer.okta.com/assets/animate-ec43d72c3ed45e08a460b8a2966d8dba6006aebfa0530935c3973fa493a8771f.css
+
+# scripts loaded in the end of the body
+scripts:
+- /js/okta-docs.js

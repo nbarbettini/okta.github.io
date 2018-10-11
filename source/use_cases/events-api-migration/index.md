@@ -1,5 +1,4 @@
 ---
-layout: docs_page
 weight: 2
 title: Events API Migration
 excerpt: How to migrate from the Events API to its System Log API replacement.
