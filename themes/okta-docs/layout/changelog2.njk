@@ -1,0 +1,17 @@
+<div class="Index">
+   {% for post in site.categories.findOne({name: 'changelog'}).posts %}
+   {{ title }}
+    <li>
+      <article class='ListView'>
+      <header class="title">
+          <h1>
+            {{ post.title }}
+          </h1>
+      </header>
+      <div>
+          {{ post }}
+      </div>
+  </article>
+    </li>
+   {% endfor %}
+</div>
